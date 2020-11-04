@@ -4,7 +4,7 @@
 Je suis un junior Front-End Développeur situé à Québec.
 
 
-![Alt Text](https://vadymlityuk.github.io/AEC_Front_End/Portfolio/PORTFOLIO/portfolio/img/profile.jpg)
+![Alt Text](url)
 
 
 * Get in touch
