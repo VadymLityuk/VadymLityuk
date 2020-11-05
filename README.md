@@ -1,7 +1,7 @@
 
-## Hey there ! : wave: My name is Vadym Lityuk
+## Hey there ! My name is Vadym Lityuk
 
-I am a junior Front-End Developer located in Quebec.
+*I am a junior Front-End Developer located in Quebec.*
 
 ![Alt Text](url)
 
