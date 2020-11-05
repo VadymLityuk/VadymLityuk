@@ -1,16 +1,17 @@
 
-## Bonjour ! Je m'appelle Vadym Lityuk 
+## Hey there ! : wave: My name is Vadym Lityuk
 
-Je suis un junior Front-End Développeur situé à Québec.
-
+I am a junior Front-End Developer located in Quebec.
 
 ![Alt Text](url)
 
 
 * Get in touch
-  * Web: 
+  * Facebook : https://www.facebook.com/letovdim/
   * LinkedIn: https://www.linkedin.com/in/vadym-lityuk-7a5092161/
-  * Twitter: 
-  * Blog: 
-  * I also publish articles here:
+
+
+
+
+ 
 
