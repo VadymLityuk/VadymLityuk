@@ -3,7 +3,7 @@
 
 *I am a junior Front-End Developer located in Quebec.*
 
-![Alt Text](https://sun9-41.userapi.com/impf/JdLFDVUzumOqFRlgYWAeDjPhLtw8QJZZgFWcGA/SYnGPPKsMek.jpg?size=993x274&quality=96&proxy=1&sign=761a16b274b6ac10990eba17933d76b6)
+![Alt Text](https://sun9-8.userapi.com/impf/whZbZZhdwJSJc9TMGa5ARalflJlNZ47JLke15w/PTisX_4NjDM.jpg?size=774x191&quality=96&proxy=1&sign=41dfb38aac1eaf0d7ebee9727459e529)
 
 
 * Get in touch
