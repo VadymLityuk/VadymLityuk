@@ -1,0 +1,122 @@
+/* [XQ: 12/11/2020] - update the schedule requirements number */
+app.put('/api/updateAutomationSchedule', async(req, res) => {
+  const { automatedKey, recordKey, numReq, basis } = req.body;
+  try {
+    let pool;
+    if(UseHTTPS) {
+      pool = await getConnection();
+    }else {
+      pool = await poolPromiseTampa;
+    }
+    const result = await pool.request()
+                            .input('AutomatedWorkflowKey', sql.NVarChar(50), automatedKey)
+                            .input('GroupBy_D4ARecordKey', sql.NVarChar(50), recordKey)
+                            .input('NumRequired', sql.Int, numReq)
+                            .input('Basis', sql.NVarChar(50), basis)
+                            .execute('D4A_Workflow_UpdateAutomationSchedule');
+    res.send(result.recordsets[0]);
+  }catch(err) {
+    res.status(500);
+    res.send('Failed to update the schedule number requirements.');
+  }
+});
+
+// TEST  Account Transfert// 
+
+
+app.get('/api/getacctransfertforget/:periodId', async (req, res) => {
+  const{ periodId}=req.params
+
+  try {
+      var pool;
+      if (UseHTTPS == true) {
+          pool = await getConnection()
+      }
+      else {
+          pool = await poolPromisedbConfigERP4Action;
+      }
+      
+      const result = await pool.request()
+                     .input('PERIOD_ID',sql.Int, periodId)
+                     .execute('ACCOUNTING_GET_PERIOD_DIFF_TRANSFERT');
+
+     // console.log(result.recordsets[0]) 
+  res.send(result.recordsets)
+  } catch (err) {
+    console.log(err)
+  }
+});
+
+app.get('/api/getacctransfertinvent', async (req, res) => {
+  const{ invenotryPeriod,inventoryEnddate }=req.params
+
+  try {
+      var pool;
+      if (UseHTTPS == true) {
+          pool = await getConnection()
+      }
+      else {
+          pool = await poolPromisedbConfigERP4Action;
+      } 
+      const result = await pool.request()
+                     .input('PERIOD_END_DATE',sql.DateTime2, null)
+                     .input('PERIOD_ID',sql.Int, 1)
+                     .execute('ACCOUNTING_GET_PERIOD_DIFF_INVENTORY');
+
+     // console.log(result.recordsets[0])
+  res.send(result.recordsets)
+  } catch (err) {
+    console.log(err)
+  }
+});
+
+
+ app.get('/api/getperiodroll', async (req, res) => {
+  const{ periodendDate,periodiD,closePeriod }=req.query
+
+  try {
+      var pool;
+      if (UseHTTPS == true) {
+          pool = await getConnection()
+      }
+      else {
+          pool = await poolPromisedbConfigERP4Action;
+      } 
+      const result = await pool.request()
+                     .input('PERIOD_END_DATE',sql.DateTime2, periodendDate)
+                     .input('PERIOD_ID',sql.Int, periodiD) 
+                     .input('CLOSE_PERIOD',sql.Bit, closePeriod)
+                     .execute('ACCOUNTING_CREATE_PERIOD_INVENTORY_SALES_WIP');
+
+                     console.log(periodendDate,periodiD,closePeriod)
+      console.log(result.recordsets[0])
+  res.send(result.recordsets)
+  } catch (err) {
+    console.log(err)
+  }
+});
+
+
+/*app.get('/api/getacctransfertinvent', async (req, res) => {
+  const{ invenotryPeriod,inventoryEnddate }=req.params
+
+  try {
+      var pool;
+      if (UseHTTPS == true) {
+          pool = await getConnection()
+      }
+      else {
+          pool = await poolPromisedbConfigERP4Action;
+      } 
+      const result = await pool.request()
+                     .input('PERIOD_END_DATE',sql.DateTime2, null)
+                     .input('PERIOD_ID',sql.Int, 1)
+                     .execute('ACCOUNTING_GET_PERIOD_DIFF_INVENTORY');
+
+     // console.log(result.recordsets[0])
+  res.send(result.recordsets)
+  } catch (err) {
+    console.log(err)
+  }
+});
+*/
