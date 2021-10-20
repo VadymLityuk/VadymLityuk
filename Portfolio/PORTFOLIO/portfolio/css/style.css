@@ -43,7 +43,8 @@ a:focus{
   border-style:solid;
   border-width:0 2em;
   height:0;
-  margin:12px;
+  display: block;
+  margin: 22px auto;
   opacity:0.4;
   text-indent:-9999px;
   transform-origin: 50% 50%;
