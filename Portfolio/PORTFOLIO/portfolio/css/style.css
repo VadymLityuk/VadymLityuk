@@ -53,9 +53,13 @@ a:focus{
 
 .down {
   -webkit-animation: downarrow 0.6s infinite alternate ease-in-out;
-  border-top:1em solid linear-gradient(45deg, rgba(252,43,0,1) 0%, rgba(89,61,213,1) 100%);
+  border-top:1em solid rgba(89,61,213,1);
 }
 
+.down:first-child:before {
+ background:linear-gradient(45deg, rgba(252,43,0,1) 0%, rgba(89,61,213,1) 100%);
+
+}
 
 /* Margins */
 
