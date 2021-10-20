@@ -53,11 +53,15 @@ a:focus{
 
 .down {
   -webkit-animation: downarrow 0.6s infinite alternate ease-in-out;
-  border-top:1em solid rgba(89,61,213,1);
+  border-top:1em solid transparent;
 }
 
 .down:first-child:before {
- background:linear-gradient(45deg, rgba(252,43,0,1) 0%, rgba(89,61,213,1) 100%);
+    background-image: -webkit-linear-gradient(left, #593dd5, #fc2b00); /* For Chrome and Safari */
+    background-image:    -moz-linear-gradient(left, #593dd5, #fc2b00); /* For old Fx (3.6 to 15) */
+    background-image:     -ms-linear-gradient(left, #593dd5, #fc2b00); /* For pre-releases of IE 10*/
+    background-image:      -o-linear-gradient(left, #593dd5, #fc2b00); /* For old Opera (11.1 to 12.0) */
+    background-image:         linear-gradient(to right, #593dd5, #fc2b00); /* Standard syntax; must be last */
 
 }
 
